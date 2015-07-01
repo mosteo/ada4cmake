@@ -40,4 +40,12 @@ For executables entirely on the Ada side, this is even simpler:
 add_ada_executable(TARGET GPRFILE)
 ``` 
 
-See the `example` folder for details
+See the `example` folder for details:
+```bash
+cd example
+mkdir build
+cd build
+cmake ..
+make
+```
+
