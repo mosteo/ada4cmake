@@ -14,7 +14,7 @@ The two macros here provided allow easy integration of Ada code in such a setup.
 
 Usage
 -----
-**Note:** These macros only work for out-of-source building with CMake >= 2.8
+**Note:** These macros only work for **out-of-source** building with CMake >= 2.8
 
 In order to make available your Ada code through a library, just include the supplied `CMakeAda.cmake` file and use the following syntax:
 
