@@ -1,0 +1,22 @@
+library project Adalibtest is
+
+   for Object_Dir use External("OBJ_DIR", "obj");
+   for Library_Name use "adatest";
+   for Library_Dir use External("LIB_DIR", "lib");
+
+   package Compiler is
+      for Default_Switches ("ada") use ("-gnat2012");
+   end Compiler;
+
+   package Builder is
+      for Default_Switches ("ada") use ("-s", "-m", "-g");
+   end Builder;
+
+   package Binder is
+      for Default_Switches ("ada") use ("-E");
+   end Binder;
+
+   -- No linking in lib projects, hence no Linker package
+
+end Adalibtest;
+
