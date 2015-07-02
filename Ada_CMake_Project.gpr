@@ -1,0 +1,9 @@
+library project Ada_CMake_Project is
+
+   for Library_Name use "Ada_CMake_Project";
+
+   for Object_Dir  use External("OBJ_DIR", "obj");
+   for Library_Dir use External("LIB_DIR", "lib");
+
+end Ada_CMake_Project;
+
