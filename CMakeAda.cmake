@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 2.8)
 include(ExternalProject)
 
 
-# Builds de project and creates a lib variable to be used in linking named TARGETLib
-# LIBFILE must not have prefix nor suffix, and is exptected to be static: libadatest.a -> adatest
+# Builds the project and creates a lib variable to be used in linking named TARGETLib
+# LIBFILE must not have prefix nor suffix, and is expected to be static: libadatest.a -> adatest
 macro(add_ada_library TARGET GPRFILE LIBFILE)
 
     # Always build and leave Ada dependencies to gprbuild
