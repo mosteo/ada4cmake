@@ -6,7 +6,7 @@ package body Lib_Test is
 
    function Give return Interfaces.C.Int is
    begin
-      return 69;
+      return 42;
    end Give;
 
    procedure Take is
