@@ -31,16 +31,9 @@ function(add_ada_executable TARGET GPRFILE)
     set(_result ${CMAKE_CURRENT_BINARY_DIR}/${OUTPUT_REL_DIR}/${TARGET}${CMAKE_EXECUTABLE_SUFFIX})
 
     # Build and leave Ada dependencies to gprbuild
-    add_custom_target(${TARGET}_build ALL
+    add_custom_target(${TARGET}
+            ALL
             COMMAND gprbuild -p -P${CMAKE_SOURCE_DIR}/${GPRFILE} --relocate-build-tree=${CMAKE_CURRENT_BINARY_DIR}
             COMMENT "Building binary ${TARGET}...")
-
-    add_executable(${TARGET} IMPORTED GLOBAL)
-    add_dependencies(${TARGET} ${TARGET}_build)
-
-    # Connect the executable with the custom target (that share the name!)
-    set_target_properties(${TARGET}
-            PROPERTIES
-            IMPORTED_LOCATION ${_result})
 
 endfunction(add_ada_executable)

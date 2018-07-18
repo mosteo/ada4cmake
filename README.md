@@ -10,11 +10,11 @@ to this: provide my Ada code in a library they can link against easily and incor
 
 This project addresses a typical debian-family open-source setup, in which native packages are used, meaning standard gcc/g++/gnat.
 
-The two macros here provided allow easy integration of Ada code in such a setup.
+The two functions here provided allow easy integration of Ada code in such a setup.
 
 Usage
 -----
-**Note:** These macros only work for **out-of-source** building with CMake >= 2.8
+**Note:** These functions only work for **out-of-source** building with CMake >= 2.8
 
 In order to make available your Ada code through a library, just include the supplied `CMakeAda.cmake` file and use the following syntax:
 
@@ -50,5 +50,3 @@ cd build
 cmake ..
 make
 ```
-
-Finally, since these TARGETs are created as IMPORTED, should you need to install them they should be referred as FILES and not TARGETS in the install command.
