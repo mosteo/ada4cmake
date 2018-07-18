@@ -29,12 +29,12 @@ and then link with:
 ```cmake
 add_executable(main main.c)
 target_link_libraries(main ${${TARGET}Lib})
+add_dependencies(main ${TARGET})
 # Supposing TARGET is AdaTest, you have to write
 #    target_link_libraries(main ${AdaTestLib})
-# This executable will implicitly depend on TARGET too.
 ```
 
-For executables entirely on the Ada side, this is even simpler:
+For executables entirely on the Ada side, things are even simpler:
 
 ```cmake
 add_ada_executable(TARGET GPRFILE)
