@@ -19,25 +19,27 @@ Usage
 In order to make available your Ada code through a library, just include the supplied `CMakeAda.cmake` file and use the following syntax:
 
 ```cmake
-add_ada_library(TARGET GPRFILE LIBFILE)
-# GPRFILE is in the CMakeLists.txt folder
-# LIBFILE is the stripped library name, e.g. libadatest.a becomes adatest
+add_ada_library(TARGET GPRFILE RELDIR)
+# TARGET is the plain name of the library (e.g., adatest for libadatesta.a)
+# GPRFILE is the GPR project file that builds the above library
+# RELDIR is the relative folder in which gprbuild builds the library (e.g. lib)
 ```
 
 and then link with:
 
 ```cmake
 add_executable(main main.c)
-target_link_libraries(main ${${TARGET}Lib})
-add_dependencies(main ${TARGET})
-# Supposing TARGET is AdaTest, you have to write
-#    target_link_libraries(main ${AdaTestLib})
+target_link_libraries(main plainlibname)
+# There is no need to make a explicit dependency on the library
 ```
 
-For executables entirely on the Ada side, things are even simpler:
+For executables built in pure Ada (no C/C++ main file) there is a similar function:
 
 ```cmake
-add_ada_executable(TARGET GPRFILE)
+add_ada_executable(TARGET GPRFILE RELDIR)
+# TARGET is the plain name of the executable
+# GPRFILE is the GPR project file that builds said executable
+# RELDIR is the relative folder in which gprbuild builds it
 ``` 
 
 See the `example` folder for details:
@@ -49,3 +51,4 @@ cmake ..
 make
 ```
 
+Finally, since these TARGETs are created as IMPORTED, should you need to install them they should be referred as FILES and not TARGETS in the install command.
