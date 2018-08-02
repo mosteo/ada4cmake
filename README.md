@@ -20,7 +20,7 @@ In order to make available your Ada code through a library, just include the sup
 
 ```cmake
 add_ada_library(TARGET GPRFILE RELDIR)
-# TARGET is the plain name of the library (e.g., adatest for libadatesta.a)
+# TARGET is the plain name of the library (e.g., adatest for libadatest.a)
 # GPRFILE is the GPR project file that builds the above library
 # RELDIR is the relative folder in which gprbuild builds the library (e.g. lib)
 ```
