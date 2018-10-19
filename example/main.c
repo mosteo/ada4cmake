@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-int give();
+int ada_add(int, int);
 
 int main() {
 
-    printf("Ada gave me %d\n", give());
+    printf("Ada added for me: %d\n", ada_add(3, 4));
 
     return 0;
 }

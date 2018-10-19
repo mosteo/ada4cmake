@@ -1,17 +1,10 @@
 package body Lib_Test is
 
-   ----------
-   -- Give --
-   ----------
+   use Interfaces.C;
 
-   function Give return Interfaces.C.Int is
+   function Ada_Add (A, B: Int) return Int is
    begin
-      return 42;
-   end Give;
-
-   procedure Take is
-   begin
-      null;
-   end;
+      return A + B;
+   end Ada_Add;
 
 end Lib_Test;
