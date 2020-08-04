@@ -36,10 +36,9 @@ target_link_libraries(main plainlibname)
 For executables built in pure Ada (no C/C++ main file) there is a similar function:
 
 ```cmake
-add_ada_executable(TARGET GPRFILE RELDIR)
+add_ada_executable(TARGET GPRFILE)
 # TARGET is the plain name of the executable
 # GPRFILE is the GPR project file that builds said executable
-# RELDIR is the relative folder in which gprbuild builds it
 ``` 
 
 See the `example` folder for details:
